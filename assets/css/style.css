@@ -238,8 +238,14 @@ h6 {
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
-.navbar li:hover>a {
+.navbar li:hover > a {
   background: #cc1616;
+  color: #fff;
+}
+
+.navbar li:hover > a:hover {
+  background: transparent;
+  color: #fff;
 }
 
 .navbar .dropdown ul {
@@ -420,9 +426,9 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: calc(100vh - 110px);
-  background: url("../img/cover.jpg") top center;
-  background-size: cover;
+ height: 100vh;
+  background: url("../img/background.jpg") top center;
+  background-size: contain;
   position: relative;
 }
 
@@ -484,6 +490,10 @@ h6 {
     padding-top: 40px;
   }
 
+  #hero .container-two {
+    padding-top: 20px;
+  }
+
   #hero h1 {
     font-size: 28px;
     line-height: 36px;
@@ -495,6 +505,7 @@ h6 {
     margin-bottom: 30px;
   }
 }
+
 
 /*--------------------------------------------------------------
 # Sections General
@@ -554,7 +565,7 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-.about .content h3 {
+/* .about .content h3 {
   font-weight: 600;
   font-size: 26px;
 }
@@ -576,11 +587,50 @@ section {
 
 .about .content p:last-child {
   margin-bottom: 0;
-}
+} */
 
 /*--------------------------------------------------------------
 # Why Us
 --------------------------------------------------------------*/
+.about .content h3 {
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  padding-bottom: 10px;
+}
+.fst-italic{
+  text-align: justify;
+}
+
+.about .content ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #cc1616;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+
+@media (max-width: 992px) {
+  .order-lg-1 {
+    order: 2;
+  }
+
+  .order-lg-2 {
+    order: 1;
+  }
+}
+
+
 .research_area {
   padding-top: 10px;
 }
@@ -653,6 +703,7 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+
 .services .icon-box {
   text-align: center;
   padding: 80px 20px;
@@ -732,6 +783,87 @@ section {
 .services .icon-box:hover p {
   color: #fff;
 }
+
+
+details {
+  width: 75%;
+  min-height: 5px;
+  max-width: 700px;
+  padding: 45px 70px 45px 45px;
+  margin: 0 auto;
+  position: relative;
+  font-size: 19px;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 15px;
+  box-sizing: border-box;
+  transition: all .3s;
+}
+
+details + details {
+  margin-top: 20px;
+}
+
+details[open] {
+  min-height: 50px;
+  background-color: #f6f7f8;
+  box-shadow: 2px 2px 20px rgba(0,0,0,.2);
+}
+
+details p {
+  color: #96999d;
+  font-weight: 300;
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+summary:focus {
+  outline: none;
+  
+}
+
+summary:focus::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 0 5px rebeccapurple;
+}
+
+summary::-webkit-details-marker {
+  display: none
+}
+
+.control-icon {
+  fill: rebeccapurple;
+  transition: .3s ease;
+  pointer-events: none;
+}
+
+.control-icon-close {
+  display: none;
+}
+
+details[open] .control-icon-close {
+  display: initial;
+  transition: .3s ease;
+}
+
+details[open] .control-icon-expand {
+  display: none;
+}
+.content{
+  font-size: 15px;
+}
+
 
 /*--------------------------------------------------------------
 # Cta
@@ -1270,163 +1402,162 @@ section {
   content: "/";
 }
 
+
+
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-#footer {
-  background: #0c0c0c;
-  padding: 0 0 30px 0;
-  color: #fff;
-  font-size: 14px;
-}
+/* Reset some default styling */
 
-#footer .footer-top {
-  padding: 60px 0 30px 0;
-}
 
-#footer .footer-top .footer-info {
-  margin-bottom: 15px;
-  background: #191919;
-  color: #fff;
-  border-top: 4px solid #cc1616;
-  text-align: center;
-  padding: 30px 20px;
-}
+/* Footer styles */
 
-#footer .footer-top .footer-info h3 {
-  font-size: 36px;
-  margin: 0 0 20px 0;
-  padding: 2px 0 2px 0;
-  line-height: 1;
-  font-weight: 700;
-}
 
-#footer .footer-top .footer-info p {
-  font-size: 14px;
-  line-height: 24px;
-  margin-bottom: 0;
-  font-family: "Raleway", sans-serif;
-}
 
-#footer .footer-top .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #262626;
-  color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
+.footer_icon div {
+  background-color: #fff;
   border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
+  padding: 10px;
+  margin-bottom: 10px;
+ 
 }
 
-#footer .footer-top .social-links a:hover {
-  background: #cc1616;
-  color: #fff;
-  text-decoration: none;
+.footer_icon i {
+  color: #cc1616;
 }
 
-#footer .footer-top h4 {
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  position: relative;
-  padding-bottom: 12px;
+.footer_title {
+  font-size: 18px; 
 }
 
-#footer .footer-top .footer-links {
-  margin-bottom: 30px;
-}
-
-#footer .footer-top .footer-links ul {
-  list-style: none;
+.footer_list ul {
   padding: 0;
-  margin: 0;
 }
 
-#footer .footer-top .footer-links ul i {
-  padding-right: 2px;
-  color: #ed5b5b;
-  font-size: 18px;
-  line-height: 1;
+.footer_list li {
+  margin-bottom: 8px;
+  list-style: none;
+
+.footer_icon i {
+    color: #cc1616;
 }
 
-#footer .footer-top .footer-links ul li {
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
+.footer_title {
+    font-size: 18px;
+    font-weight: bolder; 
 }
 
-#footer .footer-top .footer-links ul li:first-child {
-  padding-top: 0;
+.footer_list ul {
+    padding: 0;
 }
 
-#footer .footer-top .footer-links ul a {
-  color: #fff;
-  transition: 0.3s;
-  display: inline-block;
-  line-height: 1;
+.footer_list li {
+    margin-bottom: 8px;
+ 
+
+.footer_icon div {
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
-#footer .footer-top .footer-links ul a:hover {
-  color: #eb4444;
+.footer_icon i {
+    color: #cc1616;
 }
 
-#footer .footer-top .footer-newsletter form {
-  margin-top: 30px;
-  background: #fff;
-  padding: 6px 10px;
-  position: relative;
-  border-radius: 4;
+.footer_title {
+    font-size: 18px; 
 }
 
-#footer .footer-top .footer-newsletter form input[type=email] {
-  border: 0;
-  padding: 4px;
-  width: calc(100% - 110px);
+.footer_list ul {
+    padding: 0;
+    color: white;
 }
 
-#footer .footer-top .footer-newsletter form input[type=submit] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  border: 0;
-  background: none;
-  font-size: 16px;
-  padding: 0 20px;
-  background: #cc1616;
-  color: #fff;
-  transition: 0.3s;
-  border-radius: 4;
+.footer_list li {
+    margin-bottom: 8px;
+    color: #fff;
+  
 }
 
-#footer .footer-top .footer-newsletter form input[type=submit]:hover {
-  background: #e82d2d;
+.footer_bar {
+    background-color: #990000; 
+    padding: 15px 0;
 }
 
-#footer .copyright {
-  border-top: 1px solid #262626;
-  text-align: center;
-  padding-top: 30px;
+.footer_bar .copyright {
+    font-size: 14px;
 }
 
-#footer .credits {
-  padding-top: 5px;
-  text-align: center;
-  font-size: 13px;
-  color: #fff;
+
 }
 
-#footer .credits a {
-  color: #e82d2d;
+.footer_bar {
+    background-color: #990000; 
+    padding: 15px 0;
 }
 
-@media (max-width: 575px) {
-  #footer .footer-top .footer-info {
-    margin: -20px 0 30px 0;
-  }
+.footer_bar .copyright {
+    font-size: 14px;
+}
+
+
+}
+
+.footer_bar {
+  background-color: #cc1616; 
+  padding: 15px 0;
+}
+
+.collapsible {
+  background-color: #cc1616;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  margin-top: 20px;
+  outline: none;
+}
+
+.parent-collapsible {
+  background-color: #cc1616;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  outline: none;
+}
+
+.content {
+  display: none;
+}
+
+.sub-collapsible {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.sub-content {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+}
+
+.download-button {
+  background-color: #0099cc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.download-button:hover {
+  background-color: #cc1616; /* Change color on hover */
 }

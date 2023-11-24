@@ -246,6 +246,12 @@ h6 {
 .navbar li:hover > a:hover {
   background: transparent;
   color: #fff;
+  color: #fff;
+}
+
+.navbar li:hover > a:hover {
+  background: transparent;
+  color: #fff;
 }
 
 .navbar .dropdown ul {
@@ -1559,5 +1565,6 @@ details[open] .control-icon-expand {
 }
 
 .download-button:hover {
-  background-color: #cc1616; /* Change color on hover */
+  background-color: #fff;
+  color: black; 
 }
